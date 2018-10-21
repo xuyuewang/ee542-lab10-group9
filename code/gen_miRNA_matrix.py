@@ -1,4 +1,3 @@
-# copyright: yueshi@usc.edu
 # modify for all cancer types with more labels.
 import pandas as pd 
 import hashlib
@@ -44,25 +43,17 @@ def extractMatrix(dirname):
 	return df
 
 def extractLabel(inputfile):
-	df = pd.read_csv(inputfile, sep="\t")
-	#
-	# print (df[columns])
-	df['label'] = df['cases.0.samples.0.sample_type']
-	df.loc[df['cases.0.samples.0.sample_type'].str.contains("Normal"), 'label'] = 0
-	df.loc[df['cases.0.samples.0.sample_type'].str.contains("Tumor"), 'label'] = 1
-	tumor_count = df.loc[df.label == 1].shape[0]
-	normal_count = df.loc[df.label == 0].shape[0]
-	logger.info("{} Normal samples, {} Tumor samples ".format(normal_count,tumor_count))
-	columns = ['file_id','label']
-	return df[columns]
+	df = pd.read_csv(inputfile, sep=",")
+	columns = ['file_id','label_primary','label_sample']
+	return (df[columns])
 
 if __name__ == '__main__':
 
 
-	data_dir ="/Users/yueshi/Downloads/ee542-lab10-group9/data/"
+	data_dir ="/home/amber/Documents/ee542-lab10-group9/data/"
 	# Input directory and label file. The directory that holds the data. Modify this when use.
 	dirname = data_dir + "miRNA"
-	label_file = data_dir + "files_meta.tsv"
+	label_file = data_dir + "file_label.csv"
 	
 	#output file
 	outputfile = data_dir + "miRNA_matrix.csv"

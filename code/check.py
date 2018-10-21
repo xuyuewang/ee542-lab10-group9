@@ -1,4 +1,5 @@
 # copyright: yueshi@usc.edu
+# check to see if all the data have been downloaded
 import pandas as pd 
 import hashlib
 import os 
