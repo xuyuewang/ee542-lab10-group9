@@ -1,9 +1,9 @@
 This is the git repo for ee542-lab10 by group 9.
 
 Team members: 
-Jinhyun So jinhyuns@usc.edu
-Xuyue Wang xuyuewan@usc.edu
-Yizhuo Wang yizhuow@usc.edu
+Jinhyun: So jinhyuns@usc.edu;
+Xuyue Wang: xuyuewan@usc.edu;
+Yizhuo Wang: yizhuow@usc.edu.
 
 Folder /data includes all data for this lab:
 1. /miRNA includes 11486 samples of all cancer types from GDC.
